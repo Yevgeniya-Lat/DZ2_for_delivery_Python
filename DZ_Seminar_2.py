@@ -1,78 +1,78 @@
-# #  1. ++++++++
-# print('Задача 1 => Найти сумму чисел списка стоящих на нечетной позиции')
+#  1. ++++++++
+print('Задача 1 => Найти сумму чисел списка стоящих на нечетной позиции')
 
-# print ('Пример:  [1,2,3,4] -> 6')
+print ('Пример:  [1,2,3,4] -> 6')
 
-# print ('Пример:  [2, 3, 5, 9, 3] -> на нечётных позициях элементы 3 и 9, ответ: 12')
-# print()
-# print ('ПЕРВЫЙ ВАРИАНТ') 
-# rosters =  list(map(int, input("Введите список состоящий из чисел через пробел:\n").split()))
+print ('Пример:  [2, 3, 5, 9, 3] -> на нечётных позициях элементы 3 и 9, ответ: 12')
+print()
+print ('ПЕРВЫЙ ВАРИАНТ') 
+rosters =  list(map(int, input("Введите список состоящий из чисел через пробел:\n").split()))
 
-# def Sum_Index(l1st):
-#     s = 0
-#     for i in range(len(l1st)):
-#         if i % 2 != 0:
-#             s += l1st[i]
-#     return s
+def Sum_Index(l1st):
+    s = 0
+    for i in range(len(l1st)):
+        if i % 2 != 0:
+            s += l1st[i]
+    return s
 
-# print(f'Сумма чисел списка стоящих на нечетных позициях = {Sum_Index(rosters)}')
-# print()
-# print ('ВТОРОЙ ВАРИАНТ') 
+print(f'Сумма чисел списка стоящих на нечетных позициях = {Sum_Index(rosters)}')
+print()
+print ('ВТОРОЙ ВАРИАНТ') 
 
-# A =  int(input("Введите число A для создания списка (от A до N):\n"))
-# N =  int(input("Введите число N для создания списка (от A до N):\n"))
-# B =  int(input("Введите число шага в списке (от A до N):\n"))
+A =  int(input("Введите число A для создания списка (от A до N):\n"))
+N =  int(input("Введите число N для создания списка (от A до N):\n"))
+B =  int(input("Введите число шага в списке (от A до N):\n"))
 
-# rosters = list(range(A, N+1, B))
+rosters = list(range(A, N+1, B))
 
-# print(rosters) 
-# print()
-# def sum_odd_position(mylist):
-#     return sum(mylist[1::2])
+print(rosters) 
+print()
+def sum_odd_position(mylist):
+    return sum(mylist[1::2])
 
-# print(f'Сумма чисел списка стоящих на нечетных позициях = {sum_odd_position(rosters)}') 
-# print()
-# # # #================================ Для справки ================
-# # # text = '0123456789'
-# # # print(text[1::2]) # 13579
-# # # print(text[2::2]) # 2468  # ==================
-# # # ====================================================
+print(f'Сумма чисел списка стоящих на нечетных позициях = {sum_odd_position(rosters)}') 
+print()
+# # #================================ Для справки ================
+# # text = '0123456789'
+# # print(text[1::2]) # 13579
+# # print(text[2::2]) # 2468  # ==================
+# # ====================================================
 
-# # 2. ++++++++
-# print('Задача 2 => Найти произведение пар чисел в списке. ') 
-# print('Парой считаем первый и последний элемент, второй и предпоследний и т.д.') 
+# 2. ++++++++
+print('Задача 2 => Найти произведение пар чисел в списке. ') 
+print('Парой считаем первый и последний элемент, второй и предпоследний и т.д.') 
 
-# print('Пример: [2, 3, 4, 5, 6] => [12, 15, 16]; ') 
-# print(' [2, 3, 5, 6] => [12, 15] ')      
-# print()
-# print('Первый способ: ')
+print('Пример: [2, 3, 4, 5, 6] => [12, 15, 16]; ') 
+print(' [2, 3, 5, 6] => [12, 15] ')      
+print()
+print('Первый способ: ')
 
-# def Product_Pairs_Numbers(L1st): 
-#     new_L1st = len(L1st)//2 + 1 if len(L1st) % 2 != 0 else len(L1st)//2
-#     product_L1st = [L1st[i]*L1st[len(L1st)-i-1] for i in range(new_L1st)]
-#     return product_L1st
+def Product_Pairs_Numbers(L1st): 
+    new_L1st = len(L1st)//2 + 1 if len(L1st) % 2 != 0 else len(L1st)//2
+    product_L1st = [L1st[i]*L1st[len(L1st)-i-1] for i in range(new_L1st)]
+    return product_L1st
 
-# rosters1 = list(map(int, input("Введите числа через пробел:\n").split()))
-# print (f'Произведение пар чисел в списке равно => {Product_Pairs_Numbers(rosters1)}')
-# print()
-# # # ========================= 
+rosters1 = list(map(int, input("Введите числа через пробел:\n").split()))
+print (f'Произведение пар чисел в списке равно => {Product_Pairs_Numbers(rosters1)}')
+print()
+# # ========================= 
 
-# print('Второй способ:') 
+print('Второй способ:') 
 
-# def Product_Pairs_Numbers2(L1st):
-#     result = []
-#     while len(L1st) > 1:
-#         result.append(L1st[0]*L1st[-1])
-#         del L1st[0] 
-#         del L1st[-1] 
-#     if len(L1st) ==1: result.append(L1st[0]**2)       
-#     return result
+def Product_Pairs_Numbers2(L1st):
+    result = []
+    while len(L1st) > 1:
+        result.append(L1st[0]*L1st[-1])
+        del L1st[0] 
+        del L1st[-1] 
+    if len(L1st) ==1: result.append(L1st[0]**2)       
+    return result
 
-# rosters2 = list(map(int, input("Введите числа через пробел:\n").split()))
+rosters2 = list(map(int, input("Введите числа через пробел:\n").split()))
 
-# print(f'Произведение пар чисел в списке равно => {Product_Pairs_Numbers2(rosters2)}')               
-# print()
-# # ===================================================
+print(f'Произведение пар чисел в списке равно => {Product_Pairs_Numbers2(rosters2)}')               
+print()
+# ===================================================
 
 # 3. 
 
