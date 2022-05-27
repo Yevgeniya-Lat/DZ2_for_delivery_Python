@@ -1,4 +1,8 @@
 #  1. ++++++++
+from pickletools import string1
+from turtle import st
+
+print()
 print('Задача 1 => Найти сумму чисел списка стоящих на нечетной позиции')
 
 print ('Пример:  [1,2,3,4] -> 6')
@@ -101,49 +105,39 @@ my_list1 = Difference_Max_Min(rosters3)
 
 print(f'Разница между максимальным и минимальным значением дробной части элементов равно => {max(my_list1) - min(my_list1)}')
 
-
+print()
 # # ======================================================
 
-# 4.
-print('Написать программу преобразования десятичного числа в двоичное') 
+# 4.+++++
+print('Задача 4 => Написать программу преобразования десятичного числа в двоичное') 
 print('Пример: 45 -> 101101 ') 
 print('         3 -> 11')
 print('         2 -> 10')
+print()
+
+print('ПЕРВЫЙ СПОСОБ: ')
+
+N = abs(int(input('Введите десятичное  число => ')))
+
+def Decimal_Transformation_Binary(n): 
+
+    string1 = ''
+
+    while n > 0:
+        string1 = str(n % 2) + string1
+        n = n // 2
+    return string1
+ 
+print(f'Десятечное число {N} преобразованно в двоичное => {Decimal_Transformation_Binary(N)}')
 
 print()
 
+print('ВТОРОЙ СПОСОБ: ')
 
-# s = ""
-# n = int(input("Введите число для преобразовывания десятичного числа в двоичное:\n"))
-# while n != 0:
-#     s = str(n%2) + s
-#     n //=2
-# print(s)
+N = abs(int(input('Введите десятичное  число => ')))
 
-# # ================================  
+def decimalToBinary(n):
+    return bin(n).replace("0b","")
+ 
+print(f'Десятечное число {N} преобразованно в двоичное => {decimalToBinary(N)}')
 
-# n = int(input('Введите число: '))
-
-# def conv_dec_to_bin(n):
-#     bin_num = ''
-#     while n > 1:
-#         bin_num += str(n % 2)
-#         n = n // 2
-#     return bin_num[::-1]
-
-# print(conv_dec_to_bin(n))
-
-# # Другие решения
-
-# def convert_dec_to_bin(n):
-#     bin_num = []
-#     while n > 1:
-#         bin_num.insert(0, n % 2)
-#         n = n // 2
-#     return bin_num
-
-# print(convert_dec_to_bin(n))
-
-# print(bin(n).replace('0b1',''))                    # ================
-
-# =====================================================
